@@ -10,9 +10,10 @@
 | --------------- | -------------------------- |
 | `gpt-image-2.6-flare` | 2.6 快速迭代版，低画质最快约 6 秒，排版优化 |
 | `gpt-image-2.6-sunburst` | 2.6 细节版，编辑精度与一致性更好 |
-| `gpt-image-2.5` | 写实与细节表现好，适合商业素材            |
+| `gpt-image-2.5-sunburst` | 写实与细节表现好，适合商业素材 |
+| `gpt-image-2.5-flare` | 上一代快速版，跑量便宜 |
 | `gpt-image-2`   | 基础版，单价低，草图与批量试稿            |
-| `gpt-image-2-d` | 编辑模式，改图、扩图、局部重绘            |
+
 
 ## 三个接口的对应关系
 
@@ -69,7 +70,7 @@ products = ["保温杯", "帆布包", "桌面收纳盒"]
 for name in products:
     try:
         res = client.images.generate(
-            model="gpt-image-2.5",
+            model="gpt-image-2.5-sunburst",
             prompt=f"{name}，纯白背景，45度俯拍，电商主图风格，画面仅出现产品本身",
             size="1024x1024",
         )
@@ -87,7 +88,7 @@ for name in products:
 
 | 用途              | 建议尺寸      | 版本              |
 | --------------- | --------- | --------------- |
-| 电商主图、商品卡片       | 1024×1024 | `gpt-image-2.5` |
+| 电商主图、商品卡片 | 1024×1024 | `gpt-image-2.5-sunburst` |
 | 横版 banner、详情页头图 | 1536×1024 | `gpt-image-2.6-flare` |
 | 竖版海报、社媒封面       | 1024×1536 | `gpt-image-2.6-sunburst` |
 | 草稿、方案对比         | 512×512   | `gpt-image-2`   |
